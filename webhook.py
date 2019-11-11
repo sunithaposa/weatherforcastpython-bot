@@ -42,7 +42,7 @@ def makeResponse(req):
 		"displayText":speech,
 		"source":"apiai-weather-webhook"}
 	
-if __name__='__main__':
+if __name__=='__main__':
 	port=int(os.getenv('PORT',5000))
 	print("starting on port %d" % port)
 	app.run(debug=False, port=port, host='0.0.0.0')
