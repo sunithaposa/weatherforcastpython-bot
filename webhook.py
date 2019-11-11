@@ -35,9 +35,10 @@ def makeResponse(req):
 	weather=json_object['list']
 	
 
-	for i in range(0,40):
-		if date in weather[i]['dt_txt']:
-			condition=weather[i]['weather'][0]['description']
+	#for i in range(0,40):
+	#	if date in weather[i]['dt_txt']:
+	#		condition=weather[i]['weather'][0]['description']
+	condition=weather[0]['weather'][0]['description']
 	speech="The forecast for "+city+ "for "+date+" is"+condition
 	return {
 		"speech": speech,
