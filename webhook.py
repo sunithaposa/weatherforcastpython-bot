@@ -40,10 +40,22 @@ def makeResponse(req):
 	#		condition=weather[i]['weather'][0]['description']
 	condition=weather[0]['weather'][0]['description']
 	speech="The forecast for "+city+ "for "+date+" is"+condition
-	return {
-		"speech": speech,
-		"displayText":speech,
-		"source":"apiai-weather-webhook"}
+	return
+	{
+ 	 "fulfillmentMessages": [
+  	  {
+  	    "text": {
+       		 "text": [
+          		speech
+       			 ]
+      		}
+  	  }
+	 ]
+	}
+	#return {
+	#	"speech": speech,
+	#	"displayText":speech,
+	#	"source":"apiai-weather-webhook"}
 	
 if __name__=='__main__':
 	port=int(os.getenv('PORT',5000))
