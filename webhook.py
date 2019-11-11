@@ -40,18 +40,13 @@ def makeResponse(req):
 	#		condition=weather[i]['weather'][0]['description']
 	condition=weather[0]['weather'][0]['description']
 	speech="The forecast for "+city+ "for "+date+" is"+condition
-	return
-	{
- 	 "fulfillmentMessages": [
-  	  {
-  	    "text": {
-       		 "text": [
-          		speech
-       			 ]
-      		}
-  	  }
-	 ]
-	}
+	return{
+	"messages": [
+  	{
+	    "speech": speech,
+  	  "type": 0
+ 	 }
+	]}
 	#return {
 	#	"speech": speech,
 	#	"displayText":speech,
