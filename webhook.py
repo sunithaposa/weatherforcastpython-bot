@@ -21,7 +21,7 @@ def webhook():
 	res=makeResponse(req)
 	res=json.dumps(res, indent=4)
 	r=make_response(res) 
-	r.setHeader['Content-Type']='application.json'
+	r.Headers['Content-Type']='application.json'
 	return r
 
 # extract parameter values, query weahter api, construct the resposne
