@@ -19,7 +19,7 @@ def webhook():
 	#extract the relevant information and use api and get the response and send it dialogflow.
 	#helper function
 	res=makeResponse(req)
-	#res=json.dumps(res, indent=4)
+	res=json.dumps(res, indent=4)
 	r=make_response(res) 
 	r.headers['Content-Type']='application/json'
 	return r
