@@ -21,7 +21,7 @@ def webhook():
 	res=makeResponse(req)
 	res=json.dumps(res, indent=4)
 	r=make_response(res) 
-	#r.headset['Content-Type']='application.json'
+	r.setHeader['Content-Type']='application.json'
 	return r
 
 # extract parameter values, query weahter api, construct the resposne
@@ -40,16 +40,17 @@ def makeResponse(req):
 	#		condition=weather[i]['weather'][0]['description']
 	condition=weather[0]['weather'][0]['description']
 	speech="The forecast for "+city+ "for "+date+" is"+condition
-	return {"messages": [
-  	{
-	    "speech": speech,
-  	  "type": 0
- 	 }
-	]}
-	#return {
-	#	"speech": speech,
-	#	"displayText":speech,
-	#	"source":"apiai-weather-webhook"}
+	#return 
+	#{"messages": [
+  	#{
+	   # "speech": speech,
+  	#  "type": 0
+ 	# }
+	#]}
+	return {
+		"speech": speech,
+		"displayText":speech,
+		"source":"apiai-weather-webhook"}
 	
 if __name__=='__main__':
 	port=int(os.getenv('PORT',5000))
