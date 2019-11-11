@@ -26,7 +26,7 @@ def webhook():
 # extract parameter values, query weahter api, construct the resposne
 def makeResponse(req):
 	result=req.get("queryResult")
-	parameters=result.get("paramters")
+	parameters=result.get("parameters")
 	city=parameters.get("geo-city")
 	date=parameters.get("date")
 	r=request.get('http://pro.openweathermap.org/data/2.5/forecast/hourly?q='+city+',in&appid=db91df44baf43361cbf73026ce5156cb')
