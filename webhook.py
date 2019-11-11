@@ -1,7 +1,7 @@
 import json #to convert list and dictionary to json
 import os
 from flask import Flask #it is microframework to devlop web app
-from flask import requests
+from flask import request
 from flask import make_response
 #Falsk app for our web app
 
