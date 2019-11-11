@@ -39,18 +39,18 @@ def makeResponse(req):
 	#	if date in weather[i]['dt_txt']:
 	#		condition=weather[i]['weather'][0]['description']
 	condition=weather[0]['weather'][0]['description']
-	speech="The forecast for "+city+ "for "+date+" is"+ condition
-	#return 
-	#{"messages": [
-  	#{
-	   # "speech": speech,
-  	#  "type": 0
- 	# }
-	#]}
-	return {
-		"speech": speech,
-		"displayText":speech,
-		"source":"apiai-weather-webhook"}
+	speech="The forecast for "+city+ " for "+date+" is "+ condition
+	return{
+  "fulfillmentMessages": [
+    {
+      "text": {
+        "text": speech
+      }
+    }]}
+	#return {
+	#	"speech": speech,
+	#	"displayText":speech,
+	#	"source":"apiai-weather-webhook"}
 	
 if __name__=='__main__':
 	port=int(os.getenv('PORT',5000))
