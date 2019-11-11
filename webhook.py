@@ -19,7 +19,7 @@ def webhook():
 	#extract the relevant information and use api and get the response and send it dialogflow.
 	#helper function
 	res=makeResponse(req)
-	res=json.dumps(res, indent=4)
+	#res=json.dumps(res, indent=4)
 	r=make_response(res) 
 	r.headers['Content-Type']='application/json'
 	return r
@@ -39,7 +39,7 @@ def makeResponse(req):
 	#	if date in weather[i]['dt_txt']:
 	#		condition=weather[i]['weather'][0]['description']
 	condition=weather[0]['weather'][0]['description']
-	speech="The forecast for "+city+ "for "+date+" is"+condition
+	speech="The forecast for "+city+ "for "+date+" is"+ condition
 	#return 
 	#{"messages": [
   	#{
