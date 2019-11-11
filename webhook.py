@@ -29,7 +29,7 @@ def makeResponse(req):
 	parameters=result.get("paramters")
 	city=parameters.get("geo-city")
 	date=parameters.get("date")
-	r=request.get('http://pro.openweathermap.org/data/2.5/forecast/hourly?q='+city+',us&appid=b6907d289e10d714a6e88b30761fae22')
+	r=request.get('http://pro.openweathermap.org/data/2.5/forecast/hourly?q='+city+',in&appid=db91df44baf43361cbf73026ce5156cb')
 	json_object=r.json()
 	weather=json_object('list')
 	
