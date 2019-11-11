@@ -15,7 +15,7 @@ app=Flask(__name__)
 def webhook():
 	# convert the data from json.
 	req=request.get_json(silent=True, force=True)
-	#print(json.dumps(req, indent=4))
+	print(json.dumps(req, indent=4))
 	#extract the relevant information and use api and get the response and send it dialogflow.
 	#helper function
 	res=makeResponse(req)
